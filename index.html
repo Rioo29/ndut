@@ -1,0 +1,112 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Halaman Stroberi untuk Put ndut</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: #fff0f5;
+      overflow: hidden;
+    }
+    .container {
+      display: flex;
+      width: 300vw; /* 3 halaman */
+      height: 100vh;
+      transition: transform 0.8s ease-in-out;
+    }
+    .page {
+      width: 100vw;
+      height: 100vh;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      text-align: center;
+    }
+    .page1 { background: linear-gradient(#ffb6c1, #ff69b4); color: white; }
+    .page2 { background: linear-gradient(#fff0f5, #ffc0cb); }
+    .page3 { background: linear-gradient(#ff7f7f, #ff1493); color: white; }h1, h2, p {
+  margin: 10px 0;
+}
+.btn {
+  margin-top: 20px;
+  background: #ff4d6d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+.btn:hover {
+  background: #ff1e4d;
+}
+.strawberry {
+  font-size: 4rem;
+  animation: bounce 2s infinite;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+.gallery img {
+  width: 120px;
+  margin: 10px;
+  border-radius: 15px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+}
+
+  </style>
+</head>
+<body>
+  <div class="container" id="slider">
+    <!-- Halaman 1 -->
+    <section class="page page1">
+      <div class="strawberry">🍓</div>
+      <h1>Hai Ndut</h1>
+      <p>Ndut Ndut Ndut Ndut Ndut Ndut Ndut</p>
+      <button class="btn" onclick="nextPage()">Next ➡️</button>
+    </section><!-- Halaman 2 -->
+<section class="page page2">
+  <h2>Galeri Put Ndut</h2>
+  <div class="gallery">
+    <img src="1.jpg" alt="stroberi1">
+    <img src="2.jpg" alt="stroberi2">
+    <img src="3.jpg" alt="stroberi3">
+  </div>
+  <button class="btn" onclick="prevPage()">⬅️ Back</button>
+  <button class="btn" onclick="nextPage()">Next ➡️</button>
+</section>
+
+<!-- Halaman 3 -->
+<section class="page page3">
+  <h1>untuk Putt</h1>
+  <p>Mbul Ndut Ndut Ndut</p>
+  <p>Semoga halaman kecil ini bisa bikin kamu senyum ya 😊</p>
+  <button class="btn" onclick="prevPage()">⬅️ Back</button>
+</section>
+
+  </div>  <script>
+    let currentPage = 0;
+    function updatePage() {
+      document.getElementById('slider').style.transform = `translateX(-${currentPage * 100}vw)`;
+    }
+    function nextPage() {
+      if (currentPage < 2) {
+        currentPage++;
+        updatePage();
+      }
+    }
+    function prevPage() {
+      if (currentPage > 0) {
+        currentPage--;
+        updatePage();
+      }
+    }
+  </script></body>
+</html>
